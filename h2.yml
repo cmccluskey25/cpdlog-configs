@@ -1,0 +1,53 @@
+logging:
+    level:
+        org:
+            springframework:
+                cloud: DEBUG
+                integration: DEBUG
+logging-level:
+    root: DEBUG
+management:
+    endpoint:
+        health:
+            show-details: always
+    endpoints:
+        web:
+            exposure:
+                include: '*'
+    info:
+        git:
+            mode: 'full '
+server:
+    port: 8081
+spring:
+    cloud:
+        stream:
+            bindings:
+                input:
+                    content-type: application/json
+                    destination: comments.new
+                    group: cpdlog
+                output:
+                    content-type: application/json
+                    destination: comments.new
+                    group: cpdlog
+                saved-comment-output:
+                    content-type: application/json
+                    destination: comments.chat
+                    group: cpdlog-comments-chat
+    data:
+        rest:
+            basePath: /api
+    datasource:
+        password: password
+        url: jdbc:h2:mem:testdb
+        username: caroline
+    h2:
+        console:
+            enabled: true
+            path: /h2-console
+    jpa:
+        generate-ddl: true
+        hibernate:
+            ddl-auto: create-drop
+        show-sql: true

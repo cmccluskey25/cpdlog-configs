@@ -1,0 +1,43 @@
+logging-level:
+    root: DEBUG
+management:
+    endpoint:
+        health:
+            show-details: always
+    endpoints:
+        web:
+            exposure:
+                include: '*'
+    info:
+        git:
+            mode: 'full '
+server:
+    port: 8081
+spring:
+    cloud:
+        stream:
+            bindings:
+                input:
+                    content-type: application/json
+                    destination: comments.new
+                    group: cpdlog
+                output:
+                    content-type: application/json
+                    destination: comments.new
+                    group: cpdlog
+                saved-comment-output:
+                    content-type: application/json
+                    destination: comments.chat
+                    group: cpdlog-comments-chat
+    data:
+        rest:
+            basePath: /api
+    datasource:
+        driver-class-name: org.mariadb.jdbc.Driver
+        password: password
+        url: jdbc:mariadb://mariadb:3306/cpdlogdb
+        username: root
+    jpa:
+        generate-ddl: true
+        hibernate:
+            ddl-auto: create-drop
