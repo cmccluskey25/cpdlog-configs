@@ -18,4 +18,4 @@ spring:
            group: app-chatMessages 
          brokerToClient: 
            destination: cpdlog-chat-user-messages 
-           group: topic-chatMessages server:
+           group: topic-chatMessages
