@@ -9,13 +9,13 @@ spring:
           destination: cpdlog-comments-chat 
           group: comments.chat 
           content-type: application/json 
-         newComments: 
-           destination: cpdlog-comments-chat2
-           group: comments.chat 
-           content-type: application/json 
-         clientToBroker: 
-           destination: cpdlog-chat-user-messages 
-           group: app-chatMessages 
-         brokerToClient: 
-           destination: cpdlog-chat-user-messages 
-           group: topic-chatMessages
+        newComments: 
+          destination: cpdlog-comments-chat2
+          group: comments.chat 
+          content-type: application/json 
+        clientToBroker: 
+          destination: cpdlog-chat-user-messages 
+          group: app-chatMessages 
+        brokerToClient: 
+          destination: cpdlog-chat-user-messages 
+          group: topic-chatMessages
