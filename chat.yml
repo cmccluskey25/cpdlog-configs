@@ -1,6 +1,9 @@
 server: 
   port: 8200 
- 
+  
+logging-level:
+    root: DEBUG
+    
 spring: 
   cloud: 
     stream: 
