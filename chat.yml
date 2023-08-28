@@ -6,8 +6,8 @@ spring:
     stream: 
       bindings: 
         input: 
-          destination: cpdlog-comments-chat 
-          group: comments.chat 
+          destination: comments.chat  
+          group: cpdlog-comments-chat 
           content-type: application/json 
         newComments: 
           destination: cpdlog-comments-chat2
